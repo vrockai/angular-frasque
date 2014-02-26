@@ -1,0 +1,43 @@
+<div class="header">
+    <ul class="nav nav-pills pull-right">
+        <li class="active"><a ng-href="#">Home</a></li>
+    </ul>
+    <form name="faqSearch">
+        <input type="text" ng-model="faqQuery"/><button>Search</button>
+    </form>
+</div>
+
+<div class="row marketing">
+    <h1>Angular-Frasque <em>FAQ</em></h1>
+
+    <div ng-show="faqQuery">
+        <h2>Search filter: {{faqQuery}}</h2>
+        <div ng-repeat="q in questions | filter:faqQuery">
+            <h3>{{q[0]}}</h3>
+            <p>{{q[1]}}</p>
+        </div>
+    </div>
+
+    {{urlPrefix}}
+    <ul ng-hide="isContent">
+        <li ng-repeat="(id, content) in faq">
+            <a href='#/faq/{{urlPrefix}}{{id}}/'>{{content.name}}</a>
+        </li>
+    </ul>
+
+    <div ng-show="isContent && !questionId">
+        <div ng-repeat="(key, value) in faq">
+            <h3><a href="#/faq/{{urlPrefix}}{{id}}{{key}}">{{value[0]}}</a></h3>
+            <p>{{value[1]}}</p>
+        </div>
+    </div>
+
+    <div ng-show="isContent && questionId">
+        <h2>{{faq[questionId][0]}}</h2>
+        <p>{{faq[questionId][1]}}</p>
+    </div>
+</div>
+
+<div class="footer">
+    <p>♥ from the Yeoman team</p>
+</div>
