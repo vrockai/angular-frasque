@@ -2,16 +2,42 @@
 
 var frasqueApp = angular.module('frasqueApp');
 
-frasqueApp.controller('MainCtrl', ['$scope', '$route', 'FaqData', function($scope, $route, FaqData) {
+frasqueApp.controller('MainCtrl', ['$scope', '$routeParams', 'FaqData', function($scope, $routeParams, FaqData) {
 
     FaqData.get(function(response){
       $scope.faq = response;
     });
 
+
+
+
+    if(!$scope.$routeParams){
+      $scope.$routeParams = $routeParams;
+    }
+
+    $scope.$watch('$routeParams', function(){ console.log($scope.$routeParams); });
+
+    $scope.urlPrefix = '';
+    if ($scope.$routeParams.topicId){
+      $scope.urlPrefix = $scope.urlPrefix + $scope.$routeParams.topicId + '/';
+    }
+    if ($scope.$routeParams.sectionId){
+      $scope.urlPrefix = $scope.urlPrefix + $scope.$routeParams.sectionId + '/';
+    }
+
   }]).controller('FaqCtrl', ['$scope', '$routeParams', 'FaqData', function($scope, $routeParams, FaqData) {
 
     $scope.questions = [];
-
+    $scope.$routeParams = $routeParams;
+/*
+    $scope.urlPrefix = '';
+    if ($routeParams.topicId){
+      $scope.urlPrefix = $scope.urlPrefix + $routeParams.topicId + '/';
+    }
+    if ($routeParams.sectionId){
+      $scope.urlPrefix = $scope.urlPrefix + $routeParams.sectionId + '/';
+    }
+*/
     var getChildren = function(node){
       if (node instanceof Array ) {
         $scope.questions.push(node);
@@ -22,25 +48,14 @@ frasqueApp.controller('MainCtrl', ['$scope', '$route', 'FaqData', function($scop
       }
     };
 
-    // Generate breadcrumbs + url prefix
-    $scope.urlPrefix = '';
-    if ($routeParams.topicId){
-      $scope.urlPrefix = $scope.urlPrefix + $routeParams.topicId + '/';
-    }
-    if ($routeParams.sectionId){
-      $scope.urlPrefix = $scope.urlPrefix + $routeParams.sectionId + '/';
-    }
-
     // Get the JSON data
     FaqData.get(function(response){
-      console.log('getting data');
 
       $scope.faq = response;
 
       for (var i in $scope.faq){
         getChildren($scope.faq[i]);
       }
-      console.log($scope.questions);
 
       if ($routeParams.topicId) {
         var topicId = $routeParams.topicId;

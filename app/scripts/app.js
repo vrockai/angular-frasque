@@ -4,7 +4,8 @@ var frasqueApp = angular.module('frasqueApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
-  'ngRoute'
+  'ngRoute',
+  'ngAnimate'
 ]);
 
 frasqueApp.config([ '$routeProvider', function($routeProvider) {
