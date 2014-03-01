@@ -1,43 +1,81 @@
-<div class="header">
-    <ul class="nav nav-pills pull-right">
-        <li class="active"><a ng-href="#">Home</a></li>
-    </ul>
-    <form name="faqSearch">
-        <input type="text" ng-model="faqQuery"/><button>Search</button>
-    </form>
-</div>
-
-<div class="row marketing">
-    <h1>Angular-Frasque <em>FAQ</em></h1>
-
-    <div ng-show="faqQuery">
-        <h2>Search filter: {{faqQuery}}</h2>
-        <div ng-repeat="q in questions | filter:faqQuery">
-            <h3>{{q[0]}}</h3>
-            <p>{{q[1]}}</p>
+<header class="header">
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="brand" href="/#" style="padding-top: 6px; padding-bottom: 0px;">
+                    <img class="AngularJS-small" src="images/frasque.png">
+                </a>
+                <form class="navbar-form navbar-right" role="search">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search" ng-model="faqQuery">
+                    </div>
+                    <button type="submit" class="btn btn-default">Search!</button>
+                </form>
+            </div>
         </div>
     </div>
+</header>
 
-    {{urlPrefix}}
-    <ul ng-hide="isContent">
-        <li ng-repeat="(id, content) in faq">
-            <a href='#/faq/{{urlPrefix}}{{id}}/'>{{content.name}}</a>
-        </li>
-    </ul>
+<div id="faq-main" class="container">
+    <div class="row">
+        <ol class="breadcrumb">
+            <li ng-repeat="crumb in urlPrefix.split('/')">
+                <a href="#">{{crumb}}</a>
+            </li>
+        </ol>
 
-    <div ng-show="isContent && !questionId">
-        <div ng-repeat="(key, value) in faq">
-            <h3><a href="#/faq/{{urlPrefix}}{{id}}{{key}}">{{value[0]}}</a></h3>
-            <p>{{value[1]}}</p>
+        <div class="page-header">
+            <h1>Angular-Frasque <small> open-source solution for json based FAQs</small></h1>
+        </div>
+
+        <div ng-show="faqQuery">
+            <div class="panel panel-success" ng-repeat="q in questions | filter:faqQuery">
+                <div class="panel-heading">
+                    <h3 class="panel-title">{{q[0]}}</h3>
+                </div>
+                <div class="panel-body">
+                    {{q[1]}}
+                </div>
+            </div>
+        </div>
+
+        <ul ng-hide="isContent" class="faq-section-list">
+            <li ng-repeat="(id, content) in faq">
+                <a href='#/faq/{{urlPrefix}}{{id}}/'>{{content.name}}</a>
+            </li>
+        </ul>
+
+        <div ng-show="isContent && !questionId">
+
+            <div class="panel panel-default" ng-repeat="(key, value) in faq">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><a href="#/faq/{{urlPrefix}}{{id}}{{key}}">{{value[0]}}</a></h3>
+                </div>
+                <div class="panel-body">
+                    {{value[1]}}
+                </div>
+            </div>
+
+        </div>
+
+        <div ng-show="isContent && questionId">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">{{faq[questionId][0]}}</h3>
+                </div>
+                <div class="panel-body">
+                    {{faq[questionId][1]}}
+                </div>
+            </div>
         </div>
     </div>
+</div>
 
-    <div ng-show="isContent && questionId">
-        <h2>{{faq[questionId][0]}}</h2>
-        <p>{{faq[questionId][1]}}</p>
+<footer class="footer">
+    <div class="container">
+        <p class="pull-right"><a href="#" target="_self">Back to top</a></p>
+        <p>Find more about the project on
+            <a href="https://github.com/vrockai/angular-frasque" target="_blank">our github</a>.
+        </p>
     </div>
-</div>
-
-<div class="footer">
-    <p>♥ from the Yeoman team</p>
-</div>
+</footer>
