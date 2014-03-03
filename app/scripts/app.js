@@ -14,15 +14,11 @@ frasqueApp.config([ '$routeProvider', function($routeProvider) {
       templateUrl: 'views/main.html',
       controller: 'FaqCtrl'
     })
-    .when('/faq/:topicId', {
-      templateUrl : 'views/main.html',
-      controller : 'FaqCtrl'
+    .when('/faq/:sectionId*/question/:questionId', {
+      templateUrl : 'views/question.html',
+      controller : 'QuestionCtrl'
     })
-    .when('/faq/:topicId/:sectionId', {
-      templateUrl : 'views/main.html',
-      controller : 'FaqCtrl'
-    })
-    .when('/faq/:topicId/:sectionId/:questionId', {
+    .when('/faq/:sectionId*', {
       templateUrl : 'views/main.html',
       controller : 'FaqCtrl'
     })

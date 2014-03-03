@@ -5,8 +5,9 @@
             <h1>Angular-Frasque <small> open-source solution for json based FAQs</small></h1>
         </div>
 
+        <!-- Results for search -->
         <div ng-show="faqQuery">
-            <div class="panel panel-success" ng-repeat="q in questions | filter:faqQuery" ng-animate="'animate'">
+            <div class="panel panel-success" ng-repeat="q in questions | filter:faqQuery">
                 <div class="panel-heading">
                     <h3 class="panel-title">{{q[0]}}</h3>
                 </div>
@@ -16,32 +17,21 @@
             </div>
         </div>
 
-        <ul class="faq-section-list">
-            <li ng-repeat="(id, content) in faq" class="animate-repeat">
-                <a href='#/faq/{{urlPrefix}}{{id}}/'>{{content.name}}</a>
+        <!-- Browsing through sections in FAQ -->
+        <ul class="faq-section-list" ng-hide="isContent">
+            <li ng-repeat="(id, content) in faq.content" class="animate-repeat">
+                <a href='#/faq/{{routeParams}}/{{id}}'>{{content.name}}</a>
             </li>
         </ul>
 
-        <div ng-show="isContent && !questionId">
-
-            <div class="panel panel-default" ng-repeat="(key, value) in faq" ng-animate="'animate'">
+        <!-- Listing of questions -->
+        <div ng-show="faq.questions">
+            <div class="panel panel-default" ng-repeat="(key, value) in faq.questions" ng-animate="'animate'">
                 <div class="panel-heading">
-                    <h3 class="panel-title"><a href="#/faq/{{urlPrefix}}{{id}}{{key}}">{{value[0]}}</a></h3>
+                    <h3 class="panel-title"><a href="#/faq/{{routeParams}}/question/{{key}}">{{value[0]}}</a></h3>
                 </div>
                 <div class="panel-body">
                     {{value[1]}}
-                </div>
-            </div>
-
-        </div>
-
-        <div ng-show="isContent && questionId">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">{{faq[questionId][0]}}</h3>
-                </div>
-                <div class="panel-body">
-                    {{faq[questionId][1]}}
                 </div>
             </div>
         </div>

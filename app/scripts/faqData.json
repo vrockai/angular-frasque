@@ -1,12 +1,15 @@
-{
+{ "content": {
   "topic1": {
     "name": "Topic1",
     "description": "Description of Topic1",
+    "questions": { "qt1": ["Is this a topic question??","I hope so!."],
+                   "qt2": ["Is this another topic question?","Yes, it is."]},
     "content": {
       "section1" : {
         "name": "Section_1",
         "description": "Description of Section1",
-        "content":{ "q11": ["Is this a real question?","No! This is not a real question."], "q12": ["Are elephants blue?","Yes, they are."] }
+        "questions": { "q1": ["Is this a real question?","No! This is not a real question."],
+                     "q2": ["Are elephants blue?","Yes, they are."]}
       },
       "section2": {
         "name": "Section_2",
@@ -24,7 +27,8 @@
     "content": {
       "section1": {
         "name": "Section_1",
-        "content" :{ "q11" : ["q1.1","a1.1"], "q12": ["q1.2","a1.2"] }
+        "questions": { "q3": ["q1.1","a1.1"],
+                     "q4": ["q1.2","a1.2"]}
       },
       "section2": {
         "name": "Section_2"
@@ -34,5 +38,6 @@
       }
     }
   }
+}
 }
 

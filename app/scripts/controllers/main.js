@@ -2,79 +2,85 @@
 
 var frasqueApp = angular.module('frasqueApp');
 
-frasqueApp.controller('MainCtrl', ['$scope', '$routeParams', 'FaqData', function($scope, $routeParams, FaqData) {
+frasqueApp.controller('MainCtrl', ['$scope', '$rootScope', 'FaqData', function($scope, $rootScope, FaqData) {
 
-    FaqData.get(function(response){
-      $scope.faq = response;
-    });
-
-
-
-
-    if(!$scope.$routeParams){
-      $scope.$routeParams = $routeParams;
-    }
-
-    $scope.$watch('$routeParams', function(){ console.log($scope.$routeParams); });
-
-    $scope.urlPrefix = '';
-    if ($scope.$routeParams.topicId){
-      $scope.urlPrefix = $scope.urlPrefix + $scope.$routeParams.topicId + '/';
-    }
-    if ($scope.$routeParams.sectionId){
-      $scope.urlPrefix = $scope.urlPrefix + $scope.$routeParams.sectionId + '/';
-    }
-
-  }]).controller('FaqCtrl', ['$scope', '$routeParams', 'FaqData', function($scope, $routeParams, FaqData) {
+    console.debug('MainCtrl');
 
     $scope.questions = [];
-    $scope.$routeParams = $routeParams;
-/*
-    $scope.urlPrefix = '';
-    if ($routeParams.topicId){
-      $scope.urlPrefix = $scope.urlPrefix + $routeParams.topicId + '/';
-    }
-    if ($routeParams.sectionId){
-      $scope.urlPrefix = $scope.urlPrefix + $routeParams.sectionId + '/';
-    }
-*/
-    var getChildren = function(node){
-      if (node instanceof Array ) {
-        $scope.questions.push(node);
-      } else {
-        for (var i in node.content){
-          getChildren(node.content[i]);
-        }
-      }
-    };
 
-    // Get the JSON data
+    // Recursive traversion of JSON to gather all questions for search filtering.
     FaqData.get(function(response){
+
+      var getChildren = function(node){
+        for (var i in node){
+          if (node[i].hasOwnProperty('questions') ) {
+            for (var q in node[i].questions){
+              $scope.questions.push(node[i].questions[q]);
+            }
+          }
+          getChildren(node[i].content);
+        }
+      };
 
       $scope.faq = response;
 
       for (var i in $scope.faq){
         getChildren($scope.faq[i]);
       }
+    });
 
-      if ($routeParams.topicId) {
-        var topicId = $routeParams.topicId;
-        $scope.faq = response[topicId].content;
+  }]).controller('FaqCtrl', ['$scope', '$rootScope', '$route', '$routeParams', 'FaqData', function($scope, $rootScope, $route, $routeParams, FaqData) {
 
-        if ($routeParams.sectionId) {
-          var sectionId = $routeParams.sectionId;
-          $scope.faq = $scope.faq[sectionId].content;
-        }
+    console.debug('FaqCtrl');
 
-        if ($routeParams.questionId) {
-          $scope.questionId = $routeParams.questionId;
+    var routeParams = [];
+
+    $scope.routeParams = '';
+
+    if ($routeParams.questionId){
+      $scope.questionId = $routeParams.questionId;
+    }
+
+    if($routeParams.sectionId){
+      var params = $routeParams.sectionId;
+      if ($routeParams.sectionId.indexOf('/', $routeParams.sectionId.length - 1) !== -1){
+        params = $routeParams.sectionId.substring(0, $routeParams.sectionId.length - 1);
+      }
+
+      $scope.routeParams = params;
+      routeParams = params.split('/');
+    }
+
+    // Route parameters are stored in the $rootScope, so they are visible in other Controllers. Used in breadcrumbs.
+    $rootScope.routeParams = routeParams;
+
+    // Get the JSON data of current sub-tree
+    FaqData.get(function(response){
+      $scope.faq = response;
+
+      for (var j =0; j< routeParams.length; j++){
+        if(routeParams[j] !== ''){
+          $scope.faq = $scope.faq.content[routeParams[j]];
         }
       }
     });
 
-    // Show Q&A
-    $scope.$watch('faq', function(){
-      $scope.isContent = ($routeParams.sectionId && $scope.faq);
+  }]).controller('QuestionCtrl', ['$scope', '$rootScope', '$route', '$routeParams', 'FaqData', function($scope, $rootScope, $route, $routeParams, FaqData) {
+
+    console.debug('QuestionCtrl');
+
+    $scope.questionId = $routeParams.questionId;
+
+    // Get the JSON data of current sub-tree and current question
+    FaqData.get(function(response){
+
+      var routeParams = $routeParams.sectionId.split('/');
+      $scope.faq = response;
+      for (var j =0; j< routeParams.length; j++){
+        if(routeParams[j] !== ''){
+          $scope.faq = $scope.faq.content[routeParams[j]];
+        }
+      }
     });
 
   }]);
