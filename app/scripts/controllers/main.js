@@ -34,25 +34,39 @@ frasqueApp.controller('MainCtrl', ['$scope', '$rootScope', 'FaqData', function($
     console.debug('FaqCtrl');
 
     var routeParams = [];
-
+    var breadcrumbs = [];
     $scope.routeParams = '';
 
     if ($routeParams.questionId){
       $scope.questionId = $routeParams.questionId;
     }
 
+    var params = $routeParams.sectionId;
     if($routeParams.sectionId){
-      var params = $routeParams.sectionId;
       if ($routeParams.sectionId.indexOf('/', $routeParams.sectionId.length - 1) !== -1){
         params = $routeParams.sectionId.substring(0, $routeParams.sectionId.length - 1);
       }
-
-      $scope.routeParams = params;
       routeParams = params.split('/');
+      $scope.routeParams = params;
     }
 
-    // Route parameters are stored in the $rootScope, so they are visible in other Controllers. Used in breadcrumbs.
-    $rootScope.routeParams = routeParams;
+    // Creates link for breadcrumb by its name(section).
+    function createBreadcrumbLnk (section, params) {
+      var partial = params.substring(0, params.indexOf(section) + section.length);
+      return '#/faq/' + partial;
+    }
+
+    for(var index = 0; index < routeParams.length; index++) {
+      // Breadcrumb consist of the name(displayed on page) and link(anchor to the section)
+      var breadcrumb = {
+        name:routeParams[index],
+        link: createBreadcrumbLnk(routeParams[index], params)
+      };
+      breadcrumbs.push(breadcrumb);
+    }
+
+    // Breadcrumbs are stored in the $rootScope, so they are visible in other Controllers.
+    $rootScope.breadcrumbs = breadcrumbs;
 
     // Get the JSON data of current sub-tree
     FaqData.get(function(response){

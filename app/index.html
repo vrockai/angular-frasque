@@ -42,8 +42,8 @@
         </div>
         <div class="container">
             <ol class="breadcrumb" ng-cloak>
-                <li ng-repeat="crumb in routeParams">
-                    <a href="#">{{crumb}}</a>
+                <li ng-repeat="breadcrumb in breadcrumbs">
+                    <a href="{{breadcrumb.link}}">{{breadcrumb.name}}</a>
                 </li>
             </ol>
         </div>
