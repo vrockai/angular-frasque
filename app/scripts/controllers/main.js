@@ -50,17 +50,13 @@ frasqueApp.controller('MainCtrl', ['$scope', '$rootScope', 'FaqData', function($
       $scope.routeParams = params;
     }
 
-    // Creates link for breadcrumb by its name(section).
-    function createBreadcrumbLnk (section, params) {
-      var partial = params.substring(0, params.indexOf(section) + section.length);
-      return '#/faq/' + partial;
-    }
-
+    var link = '#/faq';
     for(var index = 0; index < routeParams.length; index++) {
+      link += '/' + routeParams[index];
       // Breadcrumb consist of the name(displayed on page) and link(anchor to the section)
       var breadcrumb = {
         name:routeParams[index],
-        link: createBreadcrumbLnk(routeParams[index], params)
+        link: link
       };
       breadcrumbs.push(breadcrumb);
     }
