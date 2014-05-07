@@ -1,17 +1,98 @@
 $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 
+@import "compass";
 @import 'sass-bootstrap/lib/bootstrap';
 
+body {
+    @include background(image-url("../images/carrots.png"));
+    background-color: #668000;
+}
+
+a {
+    color: #ffffff;
+
+    &:hover {
+        color: #eeffee;
+    }
+}
+
+.faq-section-list {
+    li {
+        list-style-image:url("../images/list.png");
+        a {
+            margin-left: 15px;
+            font-size: 2.2em;
+            color: #ffffff;
+        }
+    }
+}
+
+.header .container {
+    position: relative;
+    z-index: 9999;
+
+    .breadcrumb {
+        background: none;
+            color: #ffffff;
+        margin-top: 10px;
+        margin-left: 100px;
+    }
+
+    form {
+        position: relative;
+        top: 20px;
+
+        input {
+            background-color: #435208;
+            border-color: transparent;
+            color: #e0e0e0;
+        }
+
+        button {
+            background-color: #435208;
+            border-color: #3b4a00;
+            color: #e0e0e0;
+        }
+    }
+
+}
+
 .header .navbar {
-    background-color: whitesmoke;
+     @include background-image(linear-gradient(#465700, #566b00));
+     height: 100px;
+     border: none;
 }
 
 .header .brand img {
+    position: absolute;
     margin-top: 7px;
 }
 
 .panel-heading h3 {
+    color: #fff;
     font-size: 2em;
+}
+
+.panel {
+    background-color: transparent;
+}
+
+.panel-body {
+    background-color: #455700;
+    color: #ffffff;
+}
+
+.panel-default, .panel-success {
+    border: none;
+
+    .panel-heading {
+        border: none;
+        background-color: transparent;
+
+        h3 {
+            color: #ffff00;
+        }
+    }
 }
 
 .panel-body {
@@ -23,13 +104,20 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 }
 
 .footer {
-    margin-top: 5em;
-    color: #909090;
-}
+    color: #667b10;
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    @include background-image(linear-gradient(#465700, #566b00));
 
-.breadcrumb {
-    border-radius: 0 0 24px 24px;
-    margin-top: 50px;
+    a {
+        color: #668b10;
+    }
+
+    p {
+        margin: 5px;
+    }
 }
 
 /* Animations */
