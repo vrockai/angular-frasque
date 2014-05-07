@@ -11,8 +11,7 @@
                 <div class="panel-heading">
                     <h3 class="panel-title">{{q[0]}}</h3>
                 </div>
-                <div class="panel-body">
-                    {{q[1]}}
+                <div class="panel-body" ng-bind-html="q[1]">
                 </div>
             </div>
         </div>
@@ -23,8 +22,7 @@
                 <div class="panel-heading">
                     <h3 class="panel-title">{{faq.questions[questionId][0]}}</h3>
                 </div>
-                <div class="panel-body">
-                    {{faq.questions[questionId][1]}}
+                <div class="panel-body" ng-bind-html="faq.questions[questionId][1]">
                 </div>
             </div>
         </div>
