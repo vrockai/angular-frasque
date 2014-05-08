@@ -30,8 +30,7 @@
                 <div class="panel-heading">
                     <h3 class="panel-title"><a href="#/faq/{{routeParams}}/question/{{key}}">{{value[0]}}</a></h3>
                 </div>
-                <div class="panel-body">
-                    {{value[1]}}
+                <div class="panel-body" ng-bind-html="value[1]">
                 </div>
             </div>
         </div>
