@@ -8,7 +8,8 @@ var frasqueApp = angular.module('frasqueApp', [
   'ngAnimate'
 ]);
 
-frasqueApp.config([ '$routeProvider', function($routeProvider) {
+frasqueApp.config([ '$locationProvider','$routeProvider', function($locationProvider, $routeProvider) {
+  $locationProvider.baseHref = '/faq/';
   $routeProvider
     .when('/faq', {
       templateUrl: 'views/main.html',
@@ -30,7 +31,7 @@ frasqueApp.config([ '$routeProvider', function($routeProvider) {
 frasqueApp.factory('FaqData', ['$http', function($http){
   return {
     get: function(callback){
-      $http.get('../scripts/faqData.json').success(function(data){
+      $http.get('../data/faqData.json').success(function(data){
         callback(data);
       });
     }
