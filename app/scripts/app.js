@@ -31,7 +31,7 @@ frasqueApp.config([ '$locationProvider','$routeProvider', function($locationProv
 frasqueApp.factory('FaqData', ['$http', function($http){
   return {
     get: function(callback){
-      $http.get('../data/faqData.json').success(function(data){
+      $http.get('data/faqData.json').success(function(data){
         callback(data);
       });
     }
