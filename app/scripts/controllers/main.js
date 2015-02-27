@@ -55,7 +55,7 @@ frasqueApp.controller('MainCtrl', ['$scope', '$rootScope', 'FaqData', function($
       link += '/' + routeParams[index];
       // Breadcrumb consist of the name(displayed on page) and link(anchor to the section)
       var breadcrumb = {
-        name:routeParams[index],
+        name: index === 0 ? 'Faq' : routeParams[index],
         link: link
       };
       breadcrumbs.push(breadcrumb);
