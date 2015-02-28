@@ -2,7 +2,7 @@
     "General": {
     "name": "General questions",
     "description": "Description of Topic1",
-    "questions": { "qt1": ["Do you support HTML tags?","Yes, we <b>do</b> support them."],
+    "questions": { "qt1": ["Do you support HTML tags?","Yes, we <b>do</b> <i>support</i> them."],
                    "qt2": ["Is this another topic question?","Yes, it is."]},
     "content": {
       "section1" : {
