@@ -8,6 +8,10 @@ frasqueApp.controller('MainCtrl', ['$scope', '$rootScope', 'FaqData', function($
 
     $scope.questions = [];
 
+    $scope.searchClear = function() {
+      $scope.faqQuery = '';
+    };
+
     // Recursive traversion of JSON to gather all questions for search filtering.
     FaqData.get(function(response){
 
