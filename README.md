@@ -5,13 +5,16 @@ Angular-frasque is a general FAQ site. The FAQ data are stored in json format in
 
 ## Prerequisites
 
-If you don't already have `npm`, get it by installing [Node.js](http://nodejs.org/). To install [Bower](http://bower.io/) globally on your machine execute:
+If you don't already have `npm`, get it by installing [Node.js](http://nodejs.org/). To install [Bower](http://bower.io/) and [Gulp](http://gulpjs.com/) globally on your machine execute:
 
-`npm install -g bower`
+`npm install -g bower gulp`
 
-To install all npm dependencies, execute this command inside the project directory:
+To install all npm and bower dependencies, execute this command inside the project directory:
 
-`npm install`
+```
+npm install
+bower install
+```
 
 ## Build
 
