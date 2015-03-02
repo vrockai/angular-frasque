@@ -79,7 +79,12 @@ frasqueApp.controller('MainCtrl', ['$scope', '$rootScope', 'FaqData', function($
       }
     });
 
-  }]).controller('QuestionCtrl', ['$scope', '$rootScope', '$route', '$routeParams', 'FaqData', function($scope, $rootScope, $route, $routeParams, FaqData) {
+  }]).controller('QuestionCtrl', ['$scope', '$rootScope', '$route', '$routeParams', '$controller', 'FaqData', function($scope, $rootScope, $route, $routeParams, $controller, FaqData) {
+
+    // When breadcrumbs are not generated(e.g. direct access to question page via link), recall FaqCtrl
+    if(!$rootScope.breadcrumbs) {
+      $controller('FaqCtrl', {$scope: $scope});
+    }
 
     console.debug('QuestionCtrl');
 
