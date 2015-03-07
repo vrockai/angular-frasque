@@ -1,50 +1,75 @@
 { "content": {
-    "General": {
-    "name": "General questions",
-    "description": "Description of Topic1",
-    "questions": { "qt1": ["Do you support HTML tags?","Yes, we <b>do</b> <i>support</i> them."],
-                   "qt2": ["Is this another topic question?","Yes, it is."]},
+  "B12": {
+    "name": "Vitamin B12",
+    "description": "Vitamin B12",
     "content": {
-      "section1" : {
-        "name": "Section_1",
-        "description": "Description of Section1",
-        "questions": { "q1": ["Is this a real question?","No! This is not a real question."],
-                     "q2": ["Are elephants blue?","Yes, they are."]}
+      "zaklady" : {
+        "name": "Základy",
+        "questions": { "q01": [ "Co je vitamin B12?",
+                                "<p>Je to vitamin, který se podílí hlavně na krvetvorbě a fungování nervového systému.</p><p>Jelikož se tento vitamin nevyskytuje v rostlinných zdrojích, zasluhuje si zvláštní pozornost u lidí, kteří se stravují vegansky nebo převážně vegansky.</p>"],
+                      "q02": [ "Odkud může člověk B12 získat?",
+                                "<p>Nejlepším zdrojem B12 pro člověka jsou živočišné potraviny (maso, játra, mléko, sýry, atd.) a potravinové doplňky.</p><p>B12 nedokážou produkovat ani rostliny ani živočichové; produkují ho různé druhy bakterií, žijící například v travicí soustavě živočichů nebo půdě, odkud se dostává do těl zvířat. Dostává se takhle i na povrch rostlin, do vody, vyskytuje se i jako produkt fermentačních procesů. Tyto zdroje jsou však pro člověka nespolehlivé, zvláště pak při dnešních hygienických standardech (mytí potravin, dezinfekce vody). Dalším spolehlivým zdrojem B12 jsou pak umělé potravinové doplňky a uměle obohacené potraviny.</p>"],
+                      "q03": [ "Produkují bakterie vitamin B12 v lidských střevech?",
+                                "<p>Produkují.</p><p>Bohužel ne v části, kde by se B12 následně mohl vstřebat do krve, resp. není produkován/vstřebáván v potřebném množství.</p>"],
+                      "q04": [ "Existují jiné veganské zdroje B12 než potravinové doplňky a obohacené potraviny?",
+                                "<p>Ne.</p><p>Různé alternativy (viz 22 a dál) neustále zkouší mnoho lidí s konzistentně nízkou úspěšností.</p><p>Nicméně, pokud jsi dospělý člověk a nejsi kojící nebo těhotná žena a neplánuješ otěhotnět, můžeš zkusit na sobě ověřit potenciální alternativní zdroj B12. V takovém případě je rozumné, kvůli vlastnímu zdraví, nechat si stav vitaminu B12 každoročně, respektive když se objeví potíže (viz 5), zkontrolovat (viz 6). Pokud se objeví zvýšená hladina homocysteinu nebo kyseliny metylmalonové (důsledek nedostatku B12), je potřeba B12 doplnit ze spolehlivého zdroje. V případě, že šlo o nedostatek B12 a suplementací potíže vymizely, poděl se o své zkušenosti s dalšími vegany.</p><p>Pokud plánuješ otěhotnět, jsi těhotná, nebo kojíš, neriskuj to. Takové konání by bylo jednoduše neomluvitelné.</p>"],
+                      "q05": [ "Jak se nedostatek B12 projevuje?",
+                                "<p>Nejčastější projevy jsou neurologické potíže jako úzkost, deprese, brnění v končetinách, dále pak únava, slabost.</p><p>Při dlouhotrvajícím nedostatku nastává vážné a nevratné poškození nervového systému, kardiovaskulárního systému, až smrt.</p>"],
+                      "q06": [ "Jak jde nedostatek B12 spolehlivě diagnostikovat?",
+                                "<p>Pomocí měření holotranskobalaminu a homocysteinu v krvi.</p><p>Množství zásob B12 jde určit z krve pomocí měření koncentrace holotranskobalaminu (transportní globulární bílkovina, která přenáší molekuly B12). Přímým důsledkem a tedy i indikátorem nedostatku B12 je také vysoká hladina homocysteinu v krvi. Dalším indikátorem je zvýšená hladina kyseliny metylmalonové (MMA).</p><p>Pozor, pouhé měření samotného vitaminu B12 v krvi (běžný test) nestačí ke spolehlivé diagnóze nedostatku B12! Požádejte lékaře o test holotranskobalaminu a homocysteinu.</p>"],
+                      "q07": [ "Jaký je výskyt nedostatku B12 v populaci?",
+                                "<p>U veganů 73%, u vegetariánů 24%, u všežravců 1.7%.</p><p>Z toho úplné vyčerpání B12 u veganů 21%, vegetariánů 17%, všežravců 1.3%. Taková procenta dostanete, když vyberete náhodně skupinu veganů, vegetariánů a všežravců. Kdybychom vybrali jen nesuplementující vegany, výsledek by byl mnohem horší. Tohle jsou údaje z EPIC-Oxford studie zpracované v roce 2010, ve které byli sledováni britští muži. Další studie ukazují podobné výsledky a existuje zde vzrůstající trend nedostatku B12.</p>"],
+                      "q08": [ "Doplňovat (suplemenovat) nebo ne?",
+                                "<p>Suplementování určitě velmi doporučujeme.</p><p>Jediným spolehlivým veganským zdrojem vitaminu B12 jsou potravinové doplňky (suplementy) a obohacené (fortifikované) potraviny. Suplementace je proto doporučována všemi veganskými dietology i samotnou Vegan Society a hlavně dlouholetými vegany, kteří si vyzkoušeli nedostatek B12 na vlastní kůži.</p>"],
+                      "q09": [ "Kde koupím veganský vitamin B12? Kolik stojí?",
+                                "<p>V každé lékárně za cca 100 Kč koupíš 100 tablet.</p><p>B12 ve formě kyanokobalaminu je běžně dostupný v lékárnách. Například B12 100 µg od Nature's Bounty 100 tablet stojí cca 100 Kč. Další možností je multivitamin VEG1 vyráběný pro Vegan Society. Obsahuje kromě 10 µg B12 například i vitamin D, jód a selen. Koupíš ho na internetu nebo v prodejnách zdravé výživy a 90 tablet stojí kolem 260 Kč.</p>"],
+                      "q10": [ "Které potraviny jsou obohacené (fortifikované) B12?",
+                                "</p>Různé rostlinné nápoje, dezerty, margaríny, rostlinné sýry, sportovní energetické a iontové nápoje atd.</p></p>V případě, že se spoléháš na obohacené potraviny, je potřeba sledovat obsah B12 na etiketách a hlídat si doporučenou denní dávku. Oproti tomuto způsobu je suplementace jednodušší.</p>"],
+                      "q11": [ "Když doplňky, tak kyanokobalamin nebo metylkobalamin?",
+                                "<p>Z hlediska využití člověkem nebyly zjištěny výhody jednoho oproti druhému.</p><p>Výroba kyanokobalaminu je levná a výsledný produkt je trvanlivý. Metylkobalamin je přírodní forma vitaminu B12, ve srovnání s kyanokobalaminem jsou ale náklady na jeho výrobu vyšší a výsledný produkt je méně trvanlivý. Kromě kratší trvanlivosti se taky hůř vstřebává, takže doporučená denní dávka je v jeho případě vyšší než u kyanokobalaminu.</p>"],
+                      "q12": [ "Kolik B12 doplňovat?",
+                                "<p>Doporučuje se 10 až 100 µg (mikrogramu) kyanokobalaminu denně nebo 2000 µg jednou za týden.</p><p>Tabletky rozkousej a nech v ústech rozpustit. Potřebnou denní dávku lze získat i například snězením přibližně 1 µg B12 v obohacených potravinách ráno, v poledne a večer. Doporučená denní dávka vitaminu B12 je sice jen 2,4 µg, platí však, že čím vyšší dávku tohoto vitaminu sníš najednou (v tabletce), tím menší část se z ní vstřebá. Proto ten rozdíl v dávkování při několikadenní malé dávce a jednou velkou týdenní dávkou.</p><p>Toto doporučení pokrývá potřebu velké většiny veganů. Ve výjimečných případech je potřeba zvolit jiné podání B12. Víc se dočteš v odkazech na konci dokumentu.</p>"]
+            }
+          },
+      "pochybnosti" : {
+        "name": "Pochybnosti",
+        "questions": {  "q13": ["Lze vůbec průmyslově vyrábět veganský B12?",
+                                "<p>Ano.</p><p>B12 produkují bakterie, průmyslově ho jde tedy vyrábět kultivací těchto bakterií. Pak už záleží jenom na konkrétním technologickém postupu a ingrediencích výsledního produktu. Samotný B12 je ale vždy veganský.</p>"],
+                        "q14": ["Kyanokobalamin obsahuje kyanid???",
+                                "<p>Ano.</p><p>Kyanokobalamin (jedna z forem, ve které se vitamin B12 nachází) se v těle metabolizuje na metylkobalamin a pozůstatkem tohoto procesu je kyanid. Je to ale bezvýznamné množství - menší než například ve lžičce lněného semínka.</p>"],
+                        "q15": ["Neberu B12 a jsem vegan už X měsíců/let a nemám pocit, že by mi něco chybělo. Jak je to možné?",
+                                "Pravděpodobně máš pořád dostatečné zásoby B12 z předchozího neveganského stravování. Vitamin B12 se ukládá v játrech, odkud se postupně uvolňuje. Tyto zásoby vydrží i několik let, výjimečně i víc než 10 let. Je taky možné, že pravidelně nevědomky jíš některé obohacené produkty. Taky je možné, i když velmi nepravděpodobné, že máš nějaký alternativní zdroj (v takovém případě bychom o tom chtěli vědět ;). Každopádně, pokud nadále plánuješ zůstat u nesuplementování, doporučujeme si nechat aspoň jednou za rok stav B12 v krvi zkontrolovat (viz 4 a 6 TODO link)."],
+                        "q16": ["Znám dlouholeté vegany, co nesuplementují a nic jim nechybí. Jak je to možné?",
+                                "Viz 15. Nebo ti lžou ;)"],
+                        "q17": ["I masojedlíci mívají nedostatek B12, proč by to měli vegani řešit nějak víc? Mám známou, která jí maso. Navzdory tomu má nedostatek B12. Jak je to možné?",
+                                "U masojedlíků je výskyt nedostatku B12 zcela výjimečný, často kvůli malabsorbci (poruše vstřebávání). U veganů je výskyt nedostatku naopak běžný. Viz 7."],
+                        "q18": ["Jak můžu věřit výzkumům a statistikám poukazujícím na nedostatek B12?",
+                                "<p>Jsou jich desítky až stovky a jejich závěry jsou souhlasné. Mnoho studií ani nebylo původně zaměřených konkrétně na B12. Byly to jednoduše výzkumy, v rámci kterých byly sledovány náhodně vybrané skupiny lidí a ve kterých byl jeden ze sledovaných údajů hladina B12 a/nebo holotranskobalaminu, homcysteinu nebo MMA. Teprve po sesbírání a uvolnění těchto údajů někoho napadlo se podívat na B12 specificky ve skupinách podle typu stravovaní. A tak získali tyto údaje. Jiný výzkum měl zase za cíl zjistit, nakolik je holotranskobalamin spolehlivým indikátorem nedostatku B12. Opět provedli měření na náhodném vzorku veganů, vegetariánů a všežravců a výsledek byl znovu podobný výsledkům předešlých výzkumů. V těchto statistikách není prakticky žádná kontroverze.</p><p>Pokud chceš navzdory tomu vyzkoušet alternativní cestu, viz 4.</p>"],
+                        "q19": ["Je brát B12 přirozené? Je přirozené být vegan, když se pak člověk musí cpát umělou B12kou? Proč se stáváte vegany? Abyste jedli z lékárny? Je toto návrat k přírodě, či zdraví, či etice?",
+                                "<p>Přirozené nerovná se automaticky dobré, a naopak. Viz <a href='http://cs.wikipedia.org/wiki/Naturalistick%C3%BD_omyl'>naturalistický omyl</a>.</p><p>Většina lidské kultury je synonymem nepřirozenosti. Přemísťovat se na větší vzdálenosti dopravními prostředky, nebo používat internet, je zcela nepřirozené - je to špatné? Žít ve vytápěném obydlí je nepřirozené - je to špatné? Zpevnit zlomeninu dlahou, aby se mohla snadněji vyléčit, je nepřirozené - je to špatné? Vyrobit hudební nástroj a hrát na něm je nepřirozené - je to špatné? Psát a číst je nepřirozené - je to špatné? Nosit brýle, oblečení, mít monogamní vztah... takhle by šlo pokračovat do nekonečna. Brát B12 v tabletách kvůli zabezpečení spolehlivého příjmu tohoto vitaminu, který je na čistě rostlinné potravě velmi obtížné až nemožné zabezpečit, je nepřirozené. Jestli to ale pomůže zabránit utrpení a ušetřit přírodní zdroje, stěží to lze považovat za špatné.</p><p>Součástí potravy člověka byla historicky vždy aspoň částečně živočišná složka (hmyz, červi, drobní živočichové). Taky podmínky, v jakých lidé žijí, se radikálně změnily (např. vyšší hygiena). Veganství je novodobý experiment, který vznikl jako reakce na špatné podmínky zvířat v chovech. Cílem veganství není návrat k přírodě, ale snížení negativních etických a ekologických dopadů živočišné \"výroby\" na minimum. To ale neznamená, že čistě rostlinná strava je nezdravá. Právě naopak. Má mnoho zdravotních výhod. Vitamin B12 v ní ale chybí.</p><p><em>Veganství není přirozené, je ale dobré. Suplementace B12 není přirozená, ale je dobrá.</em></p>"],
+                        "q20": ["Proč nenechat lidi, ať si vyberou, jestli chtějí brát B12 místo vnucování suplementace?",
+                                "<p>Nikomu suplementaci nevnucujeme.</p><p>Nabízíme jen fakta a jejich interpretaci z našeho úhlu pohledu, rozhodnutí je na každém jednotlivci. Nicméně si myslíme, že kvůli vlastnímu zdraví a pověsti veganství je suplementace žádoucí. A to zejména z důvodů 1, 4, 5 a 7.</p>"],
+                        "q21": ["Je pravda, že když se nebudu obávat nedostatku B12, nebudu mít s B12 problém? Všechno je v hlavě, v mysli? Strach je strůjce všeho zla, které nás potkává?",
+                                "<p>Ne.</p><p>Stejně tak jako není pravda, že když se nebudeš bát smrti hladem a žízní, tak budeš moct navždy přestat jíst a pít. Fyzikálním a většině biologických procesů, včetně příjmu a metabolismu B12, je úplně jedno co si o nich myslíš.</p>"]
+        }
       },
-      "section2": {
-        "name": "Section_2",
-        "description": "Description of Section2"
-      },
-      "section3": {
-        "name": "Section_3",
-        "description": "Description of Section3"
+      
+      "altern-zdroje": {
+        "name": "Alternativní zdroje B12",
+        "description": "Alternativní zdroje B12",
+        "questions": { "q22": ["Četl jsem, že B12 se vyskytuje v různých kvašených potravinách. Je to pravda?",
+                               "<p>Ne tak docela.</p><p>V desítkách let starých studiích, které jsou dodnes citovány, se objevovalo, že B12 obsahují různé rostlinné a kvašené potraviny. Moderní věda zjistila, že jde převážně o tzv. analogy, tedy látky B12 chemicky podobné, ovšem neaktivní, tedy neplnící funkci tohoto vitamínu. Dokonce naopak mohou jeho funkci blokovat.</p>"],
+                       "q23": ["Je B12 v chlorelle? Ve spirulině? V mořských řasách?",
+                               "Jednotlivé mořské řasy, které se tradičně používají v asijské kuchyni (např. Nori), stejně jako sladkovodní mikrořasa chlorella, v jednotlivých výzkumech vykazují značné množství vitamínu B12. O skutečné využitelnosti obsaženého vitamínu B12 pro člověka nejsou zatím k dispozici žádné výživové studie. Většina potravinových doplňků z řas obashuje výhradně nebo převážně neaktivní analogy."],
+                       "q24": ["Obsahuje B12 Kombucha? Tempeh? Kysané zelí? Pivní kvasnice?",
+                               "Tyto zdroje jsou nespolehlivé a v případě průmyslové produkce zcela bezvýznamné. Také není známo, kolik je v těchto zdrojích aktivního B12 a kolik nežádoucích analogů."]
+        }
       }
     }
   },
-  "topic1": {
-    "name": "Topic1",
-    "description": "Description of Topic1",
-    "questions": { "qt1": ["Is this a topic question??","I hope so!."],
-                   "qt2": ["Is this another topic question?","Yes, it is."]},
-    "content": {
-      "section1" : {
-        "name": "Section_1",
-        "description": "Description of Section1",
-        "questions": { "q1": ["Is this a real question?","No! This is not a real question."],
-                     "q2": ["Are elephants blue?","Yes, they are."]}
-      },
-      "section2": {
-        "name": "Section_2",
-        "description": "Description of Section2"
-      },
-      "section3": {
-        "name": "Section_3",
-        "description": "Description of Section3"
-      }
-    }
-  },
-  "topic2": {
-    "name": "Topic2",
+
+  "atopic2": {
+    "name": "ATopic2",
     "description": "Description of Topic2",
     "content": {
       "section1": {

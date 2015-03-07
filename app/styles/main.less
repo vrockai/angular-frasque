@@ -1,31 +1,134 @@
-.header .navbar {
-    background-color: whitesmoke;
+body {
+  background-image: url('../images/carrots.png');
+  background-color: #668000;
 }
 
-.header .brand img {
-    margin-top: 7px;
+a {
+  color: #ffffff;
+
+  &:hover {
+    color: #eeffee;
+  }
 }
 
-.panel-heading h3 {
-    font-size: 2em;
+.page-header {
+  visibility: hidden;
+  //height: 10px;
 }
 
-.panel-body {
-    font-size: 1.5em;
+#faq-main {
+  .row {
+    margin-bottom: 40px;
+  }
 }
 
 .faq-section-list {
-    font-size: 2em;
+  li {
+    list-style-image: url('../images/list.png');
+    a {
+      margin-left: 15px;
+      font-size: 2.2em;
+      color: #ffffff;
+    }
+  }
+}
+
+.header .container {
+  position: relative;
+  z-index: 9999;
+
+  .breadcrumb {
+    position: fixed;
+    background: none;
+    color: #ffffff;
+    top: 60px;
+    margin-left: 110px;
+    /*
+    margin-top: 10px;
+    margin-left: 100px;
+    */
+  }
+
+  form {
+    position: relative;
+    top: 20px;
+
+    input {
+      background-color: #435208;
+      border-color: transparent;
+      color: #e0e0e0;
+    }
+
+    button {
+      background-color: #435208;
+      border-color: #3b4a00;
+      color: #e0e0e0;
+    }
+  }
+
+}
+
+.header .navbar {
+  background-image: linear-gradient(#465700, #566b00);
+  height: 100px;
+  border: none;
+}
+
+.header .brand img {
+  position: absolute;
+  margin-top: 7px;
+}
+
+.panel-heading h3 {
+  color: #fff;
+  font-size: 2em;
+}
+
+.panel {
+  background-color: transparent;
+}
+
+.panel-body {
+  background-color: #455700;
+  color: #ffffff;
+}
+
+.panel-default, .panel-success {
+  border: none;
+
+  .panel-heading {
+    border: none;
+    background-color: transparent;
+
+    h3 {
+      color: #ffff00;
+    }
+  }
+}
+
+.panel-body {
+  font-size: 1.5em;
+}
+
+.faq-section-list {
+  font-size: 2em;
 }
 
 .footer {
-    margin-top: 5em;
-    color: #909090;
-}
+  color: #667b10;
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+  background-image: linear-gradient(#465700, #566b00);
 
-.breadcrumb {
-    border-radius: 0 0 24px 24px;
-    margin-top: 50px;
+  a {
+    color: #668b10;
+  }
+
+  p {
+    margin: 5px;
+  }
 }
 
 /* Animations */
@@ -41,8 +144,4 @@
 .reveal-animation.ng-enter.ng-enter-active {
   opacity: 1;
   margin-left:0;
-}
-
-.ui-match {
-  background: yellow;
 }
