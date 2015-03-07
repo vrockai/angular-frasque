@@ -12,6 +12,10 @@ frasqueApp.controller('MainCtrl', ['$scope', '$rootScope', 'FaqData', function($
       $scope.faqQuery = '';
     };
 
+    $rootScope.$on('$routeChangeSuccess', function() {
+      $scope.searchClear();
+    });
+
     // Recursive traversion of JSON to gather all questions for search filtering.
     FaqData.get(function(response){
 
